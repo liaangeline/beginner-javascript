@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Variables!</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+
+<script>
+
+  // ---------------- VAR, LET, CONST -------------------------
+  // all variables (  // scoping - var variables are scoped differently than let and const)
+  var first = 'lia'; //variable declaration statement
+  let age = '400';
+  // constant 
+  const cool = 'true';
+  console.log(first) //function call statement
+
+
+  // var and let can be updated (doesn't need var in front since it already exists)
+  first = 'angeline';
+  age = 400;
+  console.log(first);
+
+
+  // const cannot be changed
+  cool = false; // will cause an ERROR
+
+
+  // SCOPE - var variables are scoped differently than let and const
+  // var - function scoped (only available inside the parent function)
+  // let and const - block scoped {}
+
+
+  //TIPS - use const by default, use let when you know it will change
+
+
+  // NAMING CONVENTIONS
+  // Don't start the variables with an uppercase letter (only used for classes)
+  // Can start with $ or _ as well
+  // iLovePizza - USE CAMELCASE 
+  // ILovePizza - This is called Upper camel case ()
+  // const this_is_snake_case 
+  // kebab-case DOES NOT WORK ON JAVASCRIPT
+
+
+
+
+  // ---------------- STRICT MODE -------------------------
+  // strict mode, so if you accidentally create a variable without declaring it ie. placing 'var' in front
+  // it will give you a warning 
+  'use strict';
+  dog = 'snickers'; //without 'use strict' this would work. 
+
+
+  // ---------------- UNDEFINED -------------------------
+  var cat; //if you don't define 'cat' it will log 'undefined'
+  cat = 'garfield'; // this line now defines the variable and it will work
+
+
+  // ---------------- SEMICOLONS ; ------------------------- 
+  // Used to terminate the line of js (statement)
+
+  // curly brackets - code block
+  if(age > 10){
+    //statement
+    console.log('You are old');
+  }
+  
+
+</script>
+
+</body>
+
+</html>
