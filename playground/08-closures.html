@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <script>
+    // ----------- CLOSURES
+    // closures is the ability to access a parent level scope from
+    // a child scope even after the parent function has been terminated
+
+    // function outer() {
+    //   const outerVar = 'The outer var';
+
+    //   function inner() {
+    //     const innerVar = 'The inner var';
+    //     console.log(innerVar);
+    //     console.log(outerVar);
+    //   }
+    //   inner();
+    // }
+
+    // outer(); // we see both variables
+
+    function outer() {
+      const outerVar = 'The outer var';
+
+      function inner() {
+        // this child function can access variables on its parents scope even after the functions have been closed
+        const innerVar = 'The inner var';
+        console.log(innerVar);
+        console.log(outerVar);
+      }
+      return inner;
+    }
+
+    const innerFunction = outer();
+    innerFunction(); // works!
+
+    // this means you can stick a function into a variable and use it later
+
+    // CLOSURE - eventhough the outer function is done, when you run the function out of it its still accessible
+
+    function createGreeting(greeting = '') {
+      const myGreet = greeting.toUpperCase(); // closure data
+      return function (name) {
+        return `${myGreet} ${name}`;
+      };
+    }
+
+    const sayHello = createGreeting('hello');
+    const sayHi = createGreeting('hi');
+    console.log(sayHello('lia'));
+    console.log(sayHello('wes'));
+
+    // PRIVATE VARIABLE
+    function createGame(gameName) {
+      let score = 0; // private variable - there is no way for us to access this variable
+      return function win() {
+        score++; // whenever its run the score will increment
+        return `YOUR GAME ${gameName} score is ${score}`;
+      };
+    }
+    const hockeyGame = createGame('Hockey');
+    const soccerGame = createGame('Soccer');
+  </script>
+</body>
+
+
+</html>
