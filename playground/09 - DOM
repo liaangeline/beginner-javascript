@@ -1,0 +1,15 @@
+// ---------------- DOCUMENT OBJECT MODEL (DOM) -------------------------
+When the HTML is ina webpage, it gets converted into the DOM. 
+This allows us to interact with the DOM via Javascript ie.listen to click, scrolls, add, modify elements etc
+
+DOM - things that are on the page
+
+remember - the global scope in the browser is called the WINDOW (window.___) Window is where all our globar
+variables are stored as well as properties like windows.location you can even use innerWidth. 
+the window is everything about the currently open window, which includes the scroll bar, tabs, etc. 
+
+DOCUMENT - resposible from the opening html tag to the closing html tag (document.___) (NOT concerened about the outer stuff ie. tabs 
+scroll bars etc. like the window. Only everything in the document (like the HTML code))
+
+NAVIGATOR - information about the device itself. like webcam and audio access etc.
+
